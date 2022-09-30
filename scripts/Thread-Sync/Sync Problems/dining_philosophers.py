@@ -1,6 +1,8 @@
 import threading
 from time import sleep
 
+# This program demonstrates the dining philosopher problem with deadlock free semaphore solution.
+
 # List of Semaphores.
 chopsticks = []
 for i in range(5):
@@ -11,8 +13,8 @@ stop_event = threading.Event()
 
 
 def philosopher(id):
-    # Get the pholosopher name.
-    name = 'Pholosopher - ' + str(id)
+    # Get the philosopher name.
+    name = 'Philosopher - ' + str(id)
 
     while not stop_event.is_set():
         think_big(name)
